@@ -1,0 +1,357 @@
+body, h1, h2, ul, li, p, dd, dt, dl{
+    margin: 0px;
+    padding: 0px;
+}
+
+[data-cor] /* ou [data-cor="azul"] */ { 
+    background-color: blue;
+    color: #fff;
+    
+}
+
+img{
+    display: block;
+    max-width: 100%; /* responsividade: o max width de 100% é o que auxilia na responsividade*/
+}
+ul{
+    list-style: none;
+}
+
+body{
+    background-color: #e2d9c3;
+    color: #222;
+    -webkit-font-smoothing: antialiased;
+    
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+}
+
+.menu{
+    grid-column: 3/5; /* define de qual gride até qual grid o elemento irá ocupar de espaço (lembrando que se conta as linhas, e não as colunas */
+    margin-top: 2rem; /* rem é a unidade realativa do pixel que for a tipografia principal do site (geralmente será 2x 16px = 32px)*/
+    margin-bottom: 2rem;
+    background: #FB5;
+}
+
+.menu ul{
+    display: flex; /*Flexbox: colocar um intem do lado do outro*/
+    flex-wrap: wrap; /* Wrap: garante que vai ter quebra de linha conforme o tamanho da responsividade*/
+    padding: 10px; /* área de clique: Da uma margem no menu */
+}
+
+.menu li a{
+    display: block;
+    padding: 10px;
+    margin-right: 10px; /* para haver mais distancia entre os botões */
+    color: #222;
+    text-decoration: none; /* para tirar o sublinhado */
+    font-family: Verdana, monospace;
+    font-weight: bold;
+    text-transform: uppercase; /* coloca tudo em maiúsculo */
+    font-size: 0.875rem; /* para definir o tamanho da fonte */
+    letter-spacing: 0.1rem; /* espaço entre as letras */
+}
+
+.grid-section{
+    grid-column: 2/4;
+    width: 100%; /* o tanto que a seção irá se expandir */
+    box-sizing: border-box; 
+    padding: 10px; /* evita, por exemplo, que o texto grude nas pontas entre as linhas */
+    display: grid;
+    grid-template-columns:90px 300px 1fr; /* importante usar o fr sempre na coluna que vai 'correr' na responsividade */
+    grid-gap: 20px; /* distância entre cada coluna de grid */
+    margin-bottom: 4rem;
+}
+
+.titulo{
+    font-family: 'Playfair Display SC', georgia; /* a segunda fonte é colocada pra que seja usada caso a primeira não exista */
+    /* a fonte Playfair foi retirada do google fonte e colada no HTML ANTES do arquivo styleanimais.css */
+    font-size: 6rem; /* rem = x16px, neste caso, 6x16px */
+    line-height: 1;
+    font-weight: normal; /* normal ou 400, ambas expressões são iguais */ /* nesse caso tira o bolder natural do H1 */
+    margin-bottom: 1rem;
+    grid-column: 1/4;
+}
+
+
+.animais h2{
+    font-family: 'IBM Plex Mono',monospace;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: 1rem;
+    color: rgb(133, 22, 10);
+}
+
+.animais h2::before{
+    content: ''; /* o content é obrigatório, mesmo que seja vazio */
+    display: inline-block; /* para ficar na mesma linha */
+    width: 40px;
+    height: 10px;
+    margin-right: 10px;
+    background: #FB5;
+}
+
+
+.animais p{
+    font-family: Helvetica, arial;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+
+}
+
+.animais-lista{
+    height: 370px;
+    overflow-y: scroll;/* O que estourar no eixo y, coloca no scroll*/
+    grid-column: 2;
+}
+
+.animais-lista li{
+    cursor:pointer; /* faz com que apareça a mãozinha no cursor */
+}
+
+.animais-lista::-webkit-scrollbar{
+    width: 18px;
+}
+
+.animais-lista::-webkit-scrollbar-thumb{  /* Thumb é a barrinha do scroll */
+    background: #FB5;
+    border-left:  4px solid  #FB5;
+    border-right: 4px solid  #FB5;
+} 
+
+.animais-lista::-webkit-scrollbar-track{ /*track é a parte de trás do scrool*/
+    background:#e2d9c3;
+}
+
+.animais-descricao{
+    grid-column: 3;
+}
+
+.animais-descricao section{ /* section = em cada seçao */
+    margin-bottom: 3rem;
+}
+
+.faq-lista{
+    grid-column: 2/4;
+}
+
+.faq-lista dt{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    color: #E54;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.faq-lista dt::before{
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 10px;
+    margin-right: 10px;
+    background: #FB5;
+}
+
+.faq-lista dd{
+    font-family: Helvetiva, Arial;
+    margin-bottom: .5rem;
+    margin-left: 40px;
+}
+
+.mapa{
+    grid-column: 2/3;
+
+}
+
+.dados{
+    grid-column: 3;
+}
+
+.dados li {
+    margin-bottom: 1rem;
+    font-family: Helvetica, Arial;
+    font-size: 1.3rem;
+    text-decoration: none;
+    
+}
+
+.dados li a {
+    color: #000;
+    text-decoration: none;
+    
+}
+
+.dados li::before{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    margin-right: 10px;
+    background: #FB5;
+}
+
+.copy{
+    grid-column: 1/5;
+   
+    margin-bottom: 2rem;
+    background: #FB5;
+}
+
+.copy p {
+    padding: 20px;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: bold;
+}
+
+/* Deixar resposivo*/
+@media only screen and (min-width: 491px) and (max-width: 700px) { /*max widh é onde começa a quebrar no responsivo*/
+    body{
+        grid-template-columns: 1fr;
+    }
+    .menu, .grid-section, .copy{
+        grid-column: 1/5;
+    }
+    .grid-section{
+        grid-template-columns: 100px 1fr;
+        grid-gap:10px;
+    }
+    .animais-lista{
+        grid-column: 1;
+    }
+    .faq-lista, .dados, .mapa{
+        grid-column: 1/3;
+    }
+    .grid-section h1{
+        font-size: 3rem;
+    }
+    .menu{
+        margin-top: 0px;    
+    }
+    .copy{
+        margin-bottom: 0px;
+    }
+}
+
+@media (max-width: 490px){
+    body{
+        grid-template-columns: 1fr;
+    }
+    .menu, .grid-section, .copy{
+        grid-column: 1/5;
+    }
+    .grid-section{
+        grid-template-columns: 100px 1fr;
+        grid-gap:10px;
+    }
+    .animais-lista{
+        grid-column: 1;
+    }
+    .faq-lista, .dados, .mapa{
+        grid-column: 1/3;
+    }
+    .grid-section h1{
+        font-size: 3rem;
+    }
+    .menu{
+        margin-top: 0px;    
+    }
+    .copy{
+        margin-bottom: 0px;
+    }
+    .faq-lista dd{
+        margin-bottom: 180px;
+    }
+}     
+
+/* ----------------- TAB NAV ----------------- */
+
+.js [data-tab="content"] section{
+    display: none;
+}
+
+[data-tab="content"] section.ativo{
+    display: block !important;
+  
+}
+
+[data-tab="content"] section.ativo.show-right{
+    
+    animation: show-right 1s forwards;
+}
+
+[data-tab="content"] section.ativo.show-down{
+
+    animation: show-down 1s forwards;
+}
+
+@keyframes show-right{
+    from{
+        opacity: 0;
+        transform: translate3d(-30px, 0 ,0);
+    }
+    to{
+        opacity: 1;
+        transform: 0px, 0, 0;
+    }
+}
+
+@keyframes show-down{
+    from{
+        opacity: 0;
+        transform: translate3d(0, -30px ,0);
+    }
+    to{
+        opacity: 1;
+        transform: 0px, 0, 0;
+    }
+}
+
+
+/* ----------------- ACCORDION ----------------- */
+
+.js [data-anime="accordion"]  dd{
+    display: none;
+}
+
+[data-anime="accordion"]  dt::after{
+    content: '  ▼' ;
+  
+}
+
+[data-anime="accordion"] dt.ativo::after{  /*quando estiver ativo ... */
+    content: '  ▲';   
+}
+
+[data-anime="accordion"]  dd.ativo{ /*ou seja, quando dd estiver ativo, o conteúdo será mostrado*/
+    display: block;
+    animation: slideDown 1s forwards;
+}
+
+@keyframes slideDown{
+    from{
+        opacity: 0;
+        max-height: 0;
+        
+    }
+    to{
+        opacity: 1;
+        max-height: 100px;
+    }
+}
+
+.js [data-anime="scroll"] {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0 ), 
+}
+
+.js [data-anime="scroll"].ativo{
+    opacity: 1;
+    transition: 0.3s;
+    transform: translate3d(0, 0, 0 );
+}
